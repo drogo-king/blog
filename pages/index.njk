@@ -3,10 +3,13 @@ permalink: /
 layout: base.njk
 ---
 
-<h1>{{ meta.title }}</h1>
-<p class="description">{{ meta.description }}</p>
+<h1>{{meta.title}}</h1>
+<p class="description">{{meta.description}}</p>
 
 {% for post in collections.posts %}
-    <h2><a href="{{post.url}}">{{post.data.title}}</a></h2>
-    <p>{{post.data.abstract}}</p>
+    <section class="postlist">
+        <h2><a href="{{post.url}}">{{post.data.title}}</a></h2>
+        <p class="info">By {{post.data.author}} in {{post.data.tags[0]}} on {{post.data.date|readabledate}}</p>
+        <p class="text">{{post.template.frontMatter.content|truncate(450)}}</p>
+    </section>
 {% endfor %}
