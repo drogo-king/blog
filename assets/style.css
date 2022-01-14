@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+* {
+margin: 0;
+}
+html {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+text-size-adjust: 100%;
+font-size: 18px;
+}
+html:focus-within {
+scroll-behavior: smooth;
+}
+body {
+height: 100%;
+}
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+height: auto;
+}
+input, button, textarea, select {
+font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+:target {
+scroll-margin-top: 2em;
+}
+
+/* The above is the "css reset" component provided by Alex. It can help to unify the visual experience across devices. */
+/* ----------------------------------------------------- */
+
+html {
+    --color-primary: #222426;
+    --color-secondary: #73777D;
+    --color-accent: #d29d00;
+    --line-height: 1.6rem;
+    --spacing-half: calc(var(--line-height) / 2);
+    --spacing: var(--line-height);
+    --spacing-2: calc(var(--line-height) * 2);
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", "Helvetica Neue", Helvetica, sans-serif;
+    color: var(--color-primary);
+    line-height: var(--line-height);
+}
+
+main {
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+h1 {
+    margin-top: var(--spacing-half);
+    text-align: center;
+    font-size: 2.6em;
+}
+
+.description {
+    text-align: center;
+    color: var(--color-secondary);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-top: var(--spacing);
+}
+
+nav a {
+    margin-right: var(--spacing-half);
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height:1;
+
+}
+
+nav a.active {
+    color: var(--color-primary);
+    position: relative;
+}
+
+nav a.active::before {
+    content: "";
+    width: 120%;
+    height: 3px;
+    background: var(--color-accent);
+    position: absolute;
+    top: calc(0px - var(--spacing) - 0.8em);
+    left: -10%;
+}
+
+nav img {
+    width: 2.5em;
+}
+
+body {
+    padding-left: var(--spacing-2);
+    padding-right: var(--spacing-2);
+}
+
+@media screen and (max-width: 680px) {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        padding-left: var(--spacing-half);
+        padding-right: var(--spacing-half);
+    }
+
+    nav a {
+        font-size: 0.8em;
+    }
+}

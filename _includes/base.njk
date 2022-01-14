@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="{{ meta.description }}" name="description">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>{{ meta.title }}</title>
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+  
+  <body>
+
+    <header>
+      <nav>
+        <a href="/">
+          <img src="/assets/logo-big.png" width="960" height="960"/>
+        </a>
+        {% for title, url in meta.nav %}
+        <a {% if page.url === url %}class="active" {% endif %} href="{{url}}">{{title}}</a>
+        {% endfor %}
+      </nav>
+    </header>
+
+    <main>
+      {{ content|safe }}
+    </main>
+
+    <footer>
+      <p>Álfheimr © 2022</p>
+    </footer>
+
+  </body>
+
+</html>

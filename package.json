@@ -1,0 +1,11 @@
+{
+  "name": "eleventy",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "eleventy --serve"
+  },
+  "author": "Wang Zicheng",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  }
+}

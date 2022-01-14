@@ -1,0 +1,12 @@
+{
+    "title": "Álfheimr",
+    "description": "Fun-loving Academia",
+    "nav": [
+        ["Home", "/"],
+        ["Essays", "/tag/essay/"],
+        ["Reviews", "/tag/review/"],
+        ["Editorial", "/tag/editorial/"],
+        ["Authors", "/author/"]
+    ]
+}
+
