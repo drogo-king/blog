@@ -10,6 +10,6 @@ layout: base.njk
     <section class="postlist">
         <h2><a href="{{post.url}}">{{post.data.title}}</a></h2>
         <p class="info">By {{post.data.author}} in {{post.data.tags[0]}} on {{post.data.date|readabledate}}</p>
-        <p class="text">{{post.template.frontMatter.content|truncate(450)}}</p>
+        <p class="text">{{post.templateContent|excerpt(450)}}</p>
     </section>
 {% endfor %}
