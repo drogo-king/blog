@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<header class="post-header">
+    <p><span>Article</span><span>{{tags[0]}}</span></p>
+
+    <h1 class="post-title">{{title}}</h1>
+
+    <p>{{author}}</p>
+    <p>{{date|readabledate}} • (reading time)</p>
+</header>
+
+{{content|safe}}
