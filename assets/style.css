@@ -62,6 +62,10 @@ html {
         --color-bg: #222426;
         --color-divider: #3B3D40;
     }
+    
+    a:hover {
+        color: white;
+    }
 }
 
 a {
@@ -99,21 +103,24 @@ nav a.active::before {
 }
 
 nav img {
-    width: 2.5em;
+    width: 2.2em;
 }
 
 body {
-    padding-left: var(--spacing-2);
-    padding-right: var(--spacing-2);
     background-color: var(--color-bg);
     padding-bottom: 15vh;
     position: relative;
     min-height: 100%;
 }
 
+.base-header {
+    margin-left: 2.5em;
+}
 
 main {
-    max-width: 950px;
+    padding-left: var(--spacing-2);
+    padding-right: var(--spacing-2);
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -198,8 +205,26 @@ footer {
 
 /* ANCHOR post below */
 
+.posttoparticle {
+    font-size: 1.2em;
+    color: var(--color-accent);
+}
+
+.posttoparticle::after {
+    content: ' -- ';
+    color: var(--color-divider);
+}
+
+.posttoptag {
+    font-style: italic;
+    font-size: 1.2em;
+    color: var(--color-secondary);
+}
+
 .post-title {
-    font-size: 2.5em;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 3.1em;
     line-height: 1.2;
     text-align: left;
 }
@@ -221,8 +246,8 @@ footer {
     background: var(--color-divider);
 }
 
-p + p {
-    margin-top: var(--spacing);
+.post-header-time{
+    font-style: italic;
 }
 
 h2 {
