@@ -23,6 +23,11 @@ module.exports = config => {
         return data.replace(/h1/g, 'h2')
     })
     
+    config.addFilter('tagfilter', (posts, data) => {
+        console.log(posts, data)
+        return posts.filter(post => post.primary_tag.slug == data)
+    })
+    
     config.addPassthroughCopy("assets")
     
     config.addPlugin(pluginRss);
