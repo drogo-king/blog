@@ -20,7 +20,7 @@ module.exports = config => {
     })
     
     config.addFilter('h1normalize', data => {
-        return data.replaceAll(/h1/g, 'h2')
+        return data.replace(/h1/g, 'h2')
     })
     
     config.addPassthroughCopy("assets")
