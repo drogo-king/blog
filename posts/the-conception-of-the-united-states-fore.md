@@ -2,6 +2,7 @@
 title: The Conception of the United States Foreign Policy at the End of 2010s
 author: "ZHAO, Shuhan"
 date: 2022-01-10
+tags: essay
 ---
 
 > This article was written in 2019, and some political criticisms and predictions are subject to obsolescence, so readers are advised to read or refer to them selectively.

@@ -16,4 +16,7 @@ module.exports = config => {
 
     config.addPassthroughCopy("assets")
     config.addPlugin(pluginRss);
+    config.addCollection("posts", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("posts/*.md");
+    })
 }

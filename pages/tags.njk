@@ -1,0 +1,23 @@
+---
+pagination:
+  data: allTags
+  size: 1
+allTags:
+  essay: "Display of Academic Essays."
+  review: "Book, Game and Movie Reviews."
+  editorial: "Comments for Social, Political and Cultural Events."
+permalink: "/tag/{{pagination.items[0]}}/"
+layout: base.njk
+---
+
+<p><span>Topic</span><span>{{collections[pagination.items[0]].length}} Posts</span>
+<h1>{{pagination.items[0]}}</h1>
+<p>{{allTags[pagination.items[0]]}}</p>
+
+{% for post in collections[pagination.items[0]] %}
+  <section class="postlist">
+    <h2><a href="{{post.url}}">{{post.data.title}}</a></h2>
+    <p class="info">By {{post.data.author}} in {{post.data.tags[0]}} on {{post.data.date|readabledate}}</p>
+    <p class="text">{{post.templateContent|excerpt(450)}}</p>
+  </section>
+{% endfor %}

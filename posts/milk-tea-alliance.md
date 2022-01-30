@@ -2,6 +2,7 @@
 title: "Spirit Possession and Roleplaying: How Does SELF Cope with Oppression"
 author: POON Hiu Wai
 date: 2022-01-10
+tags: essay
 ---
 Regarding spirit possession as roleplaying i.e., the possessed is playing the role of the spirit, is a modern mistake. The modernity—the belief in science—does tend to deny the meanings of spirit and trance, which play an important role in spirit possession yet do not exist in roleplaying. Based on the understanding of the difference between spirit possession and roleplaying, I think, they enable one’s self to cope with oppression in their own ways. With the examination of the haouka ceremony in the 1950s in Ghana, the zar ceremony in the 1970s in Sudan, and the drag ball in the 1980s in the US, the essay is about how spirit possession and roleplaying enable one’s self to cope with oppression.
 
