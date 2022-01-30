@@ -205,22 +205,6 @@ footer {
 
 /* ANCHOR post below */
 
-.posttoparticle {
-    font-size: 1.2em;
-    color: var(--color-accent);
-}
-
-.posttoparticle::after {
-    content: ' -- ';
-    color: var(--color-divider);
-}
-
-.posttoptag {
-    font-style: italic;
-    font-size: 1.2em;
-    color: var(--color-secondary);
-}
-
 .post-title {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -262,4 +246,29 @@ blockquote p {
 blockquote {
     border-left: solid 4px var(--color-accent);
     padding: 0.2em 0 0.2em var(--spacing-half);
+}
+
+/* ANCHOR common styling below */
+
+.toparticle {
+    font-size: 1.2em;
+    color: var(--color-accent);
+    position: relative;
+}
+
+.toparticle::after {
+    content: '';
+    position: absolute;
+    right: -1.25em;
+    top: 50%;
+    width: 1rem;
+    height: 2px;
+    background: var(--color-divider);
+}
+
+.toptag {
+    font-size: 1.2em;
+    color: var(--color-secondary);
+    margin-left: 1.5em;
+    text-transform: capitalize;
 }

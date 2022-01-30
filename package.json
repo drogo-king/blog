@@ -2,15 +2,16 @@
   "name": "eleventy",
   "version": "1.0.0",
   "scripts": {
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "clean": "rm -rf .cache _site"
   },
   "author": "Wang Zicheng",
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-cache-assets": "^2.3.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "dotenv": "^14.3.2",
     "linkedom": "^0.13.0",
     "luxon": "^2.3.0"
-  },
-  "devDependencies": {
-    "@11ty/eleventy-plugin-rss": "^1.1.2"
   }
 }

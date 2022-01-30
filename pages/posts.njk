@@ -1,0 +1,18 @@
+---
+pagination: 
+    data: ghost.posts
+    size: 1
+permalink: "/{{pagination.items[0].slug}}/"
+layout: base.njk
+---
+{% set post = pagination.items[0] %}
+<header class="post-header">
+    <p><span class="toparticle">Article</span><span class="toptag">{{post.primary_tag.name}}</span></p>
+
+    <h1 class="post-title">{{post.title}}</h1>
+
+    <p>{{post.primary_author.name}}</p>
+    <p class="post-header-time">{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
+</header>
+
+{{post.html|h1normalize|safe}}
