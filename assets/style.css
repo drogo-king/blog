@@ -172,6 +172,7 @@ footer {
     margin-top: var(--spacing-half);
     margin-bottom: var(--spacing-2);
     font-size: 1.2em;
+    font-family: 'Libre Baskerville', serif;
 
 }
 
@@ -188,7 +189,7 @@ footer {
 
 .postlist .info {
     margin: var(--spacing-half) 0;
-    font-style: italic;
+    font-family: 'Libre Baskerville', serif;
     color: var(--color-secondary);
 }
 
@@ -230,8 +231,8 @@ footer {
     background: var(--color-divider);
 }
 
-.post-header-time{
-    font-style: italic;
+.post-info {
+    font-family: 'Libre Baskerville', serif;
 }
 
 h2 {
@@ -282,7 +283,7 @@ blockquote {
 
 .tag-description {
     color: var(--color-secondary);
-
+    font-family: 'Libre Baskerville', serif;
 }
 
 .tag-title {

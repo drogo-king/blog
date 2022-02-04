@@ -11,8 +11,10 @@ layout: base.njk
 
     <h1 class="post-title">{{post.title}}</h1>
 
-    <p>{{post.primary_author.name}}</p>
-    <p class="post-header-time">{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
+    <section class="post-info">
+        <p>{{post.primary_author.name}}</p>
+        <p>{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
+    </section>
 </header>
 
 {{post.html|h1normalize|safe}}
