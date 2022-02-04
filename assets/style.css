@@ -272,3 +272,24 @@ blockquote {
     margin-left: 1.5em;
     text-transform: capitalize;
 }
+
+.tag-header {
+    margin-top: 12vh;
+    position: relative;
+    padding-bottom: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
+.tag-description {
+    color: var(--color-secondary);
+
+}
+
+.tag-title {
+    font-size: 3.1em;
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
