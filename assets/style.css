@@ -6,16 +6,6 @@ box-sizing: border-box;
 * {
 margin: 0;
 }
-:root {
-    font-family: 'Libre Baskerville', serif;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-family: 'Quintessential', cursive;
-    font-family: 'Courgette', cursive;
-    --font-primary: 'M PLUS Rounded 1c', sans-serif;
-    --font-secondary: 'Libre Baskerville', serif;
-    --font-functional: 'Quintessential', cursive;
-    --font-quote: 'Courgette', cursive;
-}
 html {
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -43,6 +33,11 @@ line-height: 1.5em;
 }
 p {
 font-family: var(--font-primary);
+margin-top: var(--spacing-half);
+margin-bottom: var(--spacing-half);
+font-size: 1.1em;
+line-height: 1.6em;
+
 }
 :target {
 scroll-margin-top: 2em;
@@ -54,6 +49,16 @@ scroll-margin-top: 2em;
 /* ANCHOR base below */
 
 html {
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Quintessential', cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Rowdies', cursive;
+    --font-primary: 'M PLUS Rounded 1c', sans-serif;
+    --font-secondary: 'Libre Baskerville', serif;
+    --font-functional: 'Quintessential', cursive;
+    --font-quote: 'Courgette', cursive;
+    --font-bold: 'Rowdies', cursive;
     --color-primary: #222426;
     --color-secondary: #73777D;
     --color-accent: #d29d00;
@@ -146,13 +151,16 @@ main {
 footer {
     position: absolute;
     bottom: var(--spacing-half);
-    width: 160px;
+    width: 180px;
     left: calc(50% - 80px);
     font-size: 0.9em;
-    font-family: var(--font-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer {
+    font-family: var(--font-secondary);
 }
 
 .rss {
@@ -281,7 +289,7 @@ h6 {
 }
 
 blockquote p {
-    font-family: var(--font-decoration);
+    font-family: var(--font-quote);
     font-style: normal;
 }
 
@@ -291,9 +299,12 @@ blockquote {
 }
 
 em {
-    font-family: var(--font-quote);
+    font-family: var(--font-bold);
     font-style: normal;
-    font-weight: bold;
+}
+
+i {
+    font-family: var(--font-functional);
 }
 
 /* ANCHOR tag pages below */
