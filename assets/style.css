@@ -6,6 +6,16 @@ box-sizing: border-box;
 * {
 margin: 0;
 }
+:root {
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Quintessential', cursive;
+    font-family: 'Courgette', cursive;
+    --font-primary: 'M PLUS Rounded 1c', sans-serif;
+    --font-secondary: 'Libre Baskerville', serif;
+    --font-functional: 'Quintessential', cursive;
+    --font-quote: 'Courgette', cursive;
+}
 html {
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -26,6 +36,13 @@ font: inherit;
 }
 p, h1, h2, h3, h4, h5, h6 {
 overflow-wrap: break-word;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--font-secondary);
+line-height: 1.5em;
+}
+p {
+font-family: var(--font-primary);
 }
 :target {
 scroll-margin-top: 2em;
@@ -48,7 +65,7 @@ html {
     --spacing-2: calc(var(--line-height) * 2);
     --spacing-3: calc(var(--line-height) * 3);
     --spacing-4: calc(var(--line-height) * 4);
-    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: var(--font-primary);
     color: var(--color-primary);
     line-height: var(--line-height);
     height: 100%;
@@ -77,6 +94,7 @@ nav {
     display: flex;
     align-items: center;
     padding-top: var(--spacing);
+    font-family: var(--font-secondary);
 }
 
 nav a {
@@ -128,9 +146,10 @@ main {
 footer {
     position: absolute;
     bottom: var(--spacing-half);
-    width: 150px;
-    left: calc(50% - 75px);
+    width: 160px;
+    left: calc(50% - 80px);
     font-size: 0.9em;
+    font-family: var(--font-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,10 +188,10 @@ footer {
 .description {
     text-align: center;
     color: var(--color-secondary);
-    margin-top: var(--spacing-half);
+    margin-top: var(--spacing);
     margin-bottom: var(--spacing-2);
     font-size: 1.2em;
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-functional);
 
 }
 
@@ -189,13 +208,14 @@ footer {
 
 .postlist .info {
     margin: var(--spacing-half) 0;
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-functional);
     color: var(--color-secondary);
 }
 
 .postlist .text {
     font-size: 1.1em;
     line-height: 1.7;
+    font-family: var(--font-primary);
 }
 
 @media (max-width: 680px) {
@@ -206,19 +226,20 @@ footer {
 
 /* ANCHOR post below */
 
+.post-header {
+    margin-top: 12vh;
+    position: relative;
+    padding-bottom: var(--spacing);
+    margin-bottom: var(--spacing);
+    font-family: var(--font-secondary);
+}
+
 .post-title {
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 3.1em;
     line-height: 1.2;
     text-align: left;
-}
-
-.post-header {
-    margin-top: 12vh;
-    position: relative;
-    padding-bottom: var(--spacing);
-    margin-bottom: var(--spacing);
 }
 
 .post-header::after {
@@ -232,16 +253,36 @@ footer {
 }
 
 .post-info {
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-functional);
 }
 
 h2 {
+    font-size: 2em;
     margin-top: var(--spacing);
     margin-bottom: var(--spacing);
 }
 
+h3 {
+    font-size: 3rem;
+    text-indent: -1px;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
 blockquote p {
-    font-style: italic;
+    font-family: var(--font-decoration);
+    font-style: normal;
 }
 
 blockquote {
@@ -249,7 +290,13 @@ blockquote {
     padding: 0.2em 0 0.2em var(--spacing-half);
 }
 
-/* ANCHOR common styling below */
+em {
+    font-family: var(--font-quote);
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* ANCHOR tag pages below */
 
 .toparticle {
     font-size: 1.2em;
@@ -283,7 +330,7 @@ blockquote {
 
 .tag-description {
     color: var(--color-secondary);
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-secondary);
 }
 
 .tag-title {
