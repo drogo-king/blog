@@ -1,4 +1,20 @@
 ---
-permalink: /author/
+permalink: /authors/
 layout: base.njk
+title: Authors
 ---
+<h1>Authors</h1>
+<section class="author-list">
+    {% set data = authors.authors %}
+    {% for author in data %}
+    <a href="/authors/{{author.slug}}/">
+        <section class="author-item">
+            <div>
+                <p>{{author.name}}</p>
+                <p>{{author.bio}}</p>
+            </div>
+            <img src="{{author.cover_image}}"/>
+        </section>
+    </a>
+    {%endfor%}
+</section>

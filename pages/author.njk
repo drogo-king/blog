@@ -1,0 +1,10 @@
+---
+pagination: 
+    data: authors.authors
+    size: 1
+permalink: "/authors/{{pagination.items[0].slug}}/"
+layout: base.njk
+---
+<h1>{{pagination.items[0].name}}</h1>
+
+{% set posts = ghost.posts|authorfilter(pagination.items[0].slug) %}
