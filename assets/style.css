@@ -188,7 +188,6 @@ footer {
 /* ANCHOR index below */
 
 .index-h1 {
-    margin-top: var(--spacing-half);
     text-align: center;
     font-size: 3.2em;
     margin-top: var(--spacing-4);
@@ -266,31 +265,30 @@ footer {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.2em;
     margin-top: var(--spacing);
-    margin-bottom: var(--spacing);
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 2em;
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
 }
 
 h3 {
-    font-size: 2.4rem;
+    font-size: 1.8em;
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
 }
 
 h4 {
-    font-size: 2rem;
+    font-size: 1.6em;
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
 }
 
 h5 {
-    font-size: 2rem;
+    font-size: 1.4em;
     font-weight: 500;
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
