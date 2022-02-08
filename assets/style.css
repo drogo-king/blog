@@ -38,9 +38,9 @@ scroll-margin-top: 2em;
 /* ANCHOR base below */
 
 :root {
-    --font-primary: 'M PLUS Rounded 1c', sans-serif;
+    --font-primary: 'Raleway', sans-serif;
     --font-secondary: 'Libre Baskerville', serif;
-    --font-functional: 'Quintessential', cursive;
+    --font-functional: 'Redressed', cursive;
     --font-quote: 'Courgette', cursive;
     --font-bold: 'Rowdies', cursive;
     --color-primary: #222426;
@@ -106,7 +106,7 @@ nav {
 nav a {
     margin-right: var(--spacing-half);
     color: var(--color-secondary);
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: bold;
     line-height:1;
 }
@@ -196,9 +196,9 @@ footer {
 .description {
     text-align: center;
     color: var(--color-secondary);
-    margin-top: var(--spacing);
-    margin-bottom: var(--spacing-2);
-    font-size: 1.2em;
+    margin-top: var(--spacing-half);
+    margin-bottom: var(--spacing);
+    font-size: 1.4em;
     font-family: var(--font-functional);
 
 }
@@ -215,6 +215,7 @@ footer {
 }
 
 .postlist .info {
+    font-size: 1.2em;
     margin: var(--spacing-half) 0;
     font-family: var(--font-functional);
     color: var(--color-secondary);
@@ -261,6 +262,7 @@ footer {
 }
 
 .post-info {
+    font-size: 1.15em;
     font-family: var(--font-functional);
 }
 
