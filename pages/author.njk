@@ -6,12 +6,17 @@ permalink: "/authors/{{pagination.items[0].slug}}/"
 layout: base.njk
 ---
 {% set posts = ghost.posts|authorfilter(pagination.items[0].slug) %}
-<p><span>Author</span><span>{{posts.length}} Post</span></p>
-<h1>{{pagination.items[0].name}}</h1>
-<p>{{pagination.items[0].bio}}</p>
+<header class="author-header">
+    <p><span class="toparticle">Author</span><span class="toptag">{{posts.length}} Posts</span></p>
+    <div class="author-div">
+        <img class="profile-img" src="{{pagination.items[0].profile_image}}"/>
+        <h1 class="author-title">{{pagination.items[0].name}}</h1>
+    </div>
+    <p class="author-bio">{{pagination.items[0].bio}}</p>
+</header>
 
 {% for post in posts %}
-    <section class="postlist">
+    <section class="postlist author-postlist">
         <h2><a href="/{{post.slug}}">{{post.title}}</a></h2>
         <p class="info">By {{post.primary_author.name}} in {{post.primary_tag.name}} on {{post.published_at|ghostdate}}</p>
         <p class="text">{{post.html|excerpt(450)}}</p>

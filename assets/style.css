@@ -64,6 +64,14 @@ scroll-margin-top: 2em;
         --color-bg: #222426;
         --color-divider: #3B3D40;
     }
+
+    .footer {
+        color: var(--color-secondary);
+    }
+
+    .rss {
+        fill: var(--color-secondary);
+    }
 }
 
 html {
@@ -262,6 +270,8 @@ footer {
     font-family: var(--font-functional);
 }
 
+/* ANCHOR markdown below */
+
 .post-info-p {
     margin-top: 8px;
 }
@@ -371,18 +381,19 @@ em {
     text-transform: capitalize;
 }
 
-/* ANCHOR Author list below */
+/* ANCHOR authors list below */
 
-.author-title {
-    margin-top: 12vh;
+.authors-title {
     font-size: 3em;
+    line-height: 1.2;
+    margin-top: 12vh;
 }
 
-.author-list {
+.authors-list {
     margin-top: var(--spacing-3);
 }
 
-.author-item {
+.authors-item {
     height: 8em;
     border: var(--color-divider) 1px solid;
     display: grid;
@@ -390,24 +401,76 @@ em {
     margin-bottom: var(--spacing-2);
 }
 
-.author-item div {
+.authors-item div {
     padding: var(--spacing-half);
 }
 
-.author-item img {
+.authors-item img {
     height: calc(8em - 2px);
 }
 
-.author-item-name {
+.authors-item-name {
     margin-top: var(--spacing-half);
     font-family: var(--font-secondary);
     font-size: 0.9em;
 }
 
-.author-item-location {
+.authors-item-location {
     font-family: var(--font-functional);
 }
 
-.author-item-bio {
+.authors-item-bio {
     font-family: var(--font-functional);
+}
+
+/* ANCHOR author below */
+
+.author-title {
+    font-size: 2.7em;
+    line-height: 1.2;
+    text-align: left;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
+.profile-img {
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    margin-right: 20px;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
+.author-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: fit-content;
+}
+
+.author-header {
+    margin-top: 12vh;
+    position: relative;
+    padding-bottom: var(--spacing);
+}
+
+.author-bio {
+    color: var(--color-secondary);
+    font-family: var(--font-secondary);
+}
+
+.author-header:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 8rem;
+    height: 2px;
+    background: var(--color-divider);
+}
+
+.author-postlist {
+    border: none;
 }
