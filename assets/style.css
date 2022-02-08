@@ -82,10 +82,6 @@ p {
     line-height: 1.7;
 }
 
-p + p {
-    margin-top: var(--spacing);
-}
-
 a {
     text-decoration: none;
     color: var(--color-primary);
@@ -210,7 +206,7 @@ footer {
 }
 
 .postlist h2 {
-    font-size: 1.8em;
+    font-size: 1.7em;
     line-height: 1.2;
 }
 
@@ -222,7 +218,7 @@ footer {
 }
 
 .postlist .text {
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.7;
     font-family: var(--font-primary);
 }
@@ -246,7 +242,7 @@ footer {
 .post-title {
     margin-top: 40px;
     margin-bottom: 40px;
-    font-size: 3.1em;
+    font-size: 3em;
     line-height: 1.2;
     text-align: left;
 }
@@ -266,31 +262,46 @@ footer {
     font-family: var(--font-functional);
 }
 
+.post-info-p {
+    margin-top: 8px;
+}
+
+p + p {
+    margin-top: var(--spacing);
+}
+
 h1 {
-    font-size: 2.2em;
+    font-size: 2em;
     margin-top: var(--spacing);
 }
 
 h2 {
-    font-size: 2em;
-    margin-bottom: var(--spacing-half);
-    margin-top: var(--spacing-half);
-}
-
-h3 {
     font-size: 1.8em;
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
 }
 
-h4 {
+h3 {
     font-size: 1.6em;
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
 }
 
-h5 {
+h4 {
     font-size: 1.4em;
+    margin-bottom: var(--spacing-half);
+    margin-top: var(--spacing-half);
+}
+
+h5 {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: var(--spacing-half);
+    margin-top: var(--spacing-half);
+}
+
+h6 {
+    font-size: 1.1em;
     font-weight: 500;
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
@@ -302,15 +313,16 @@ blockquote {
     padding: 0.2em 0 0.2em var(--spacing-half);
     margin-bottom: var(--spacing-half);
     margin-top: var(--spacing-half);
+    line-height: 1.7em;
+}
+
+strong {
+    font-family: var(--font-bold);
 }
 
 em {
-    font-family: var(--font-bold);
-    font-style: normal;
-}
-
-i {
     font-family: var(--font-functional);
+    font-size: 1.2em;
 }
 
 /* ANCHOR tag pages below */
@@ -351,7 +363,7 @@ i {
 }
 
 .tag-title {
-    font-size: 3.1em;
+    font-size: 3em;
     line-height: 1.2;
     text-align: left;
     margin-top: 10px;

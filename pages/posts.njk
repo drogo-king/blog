@@ -12,9 +12,9 @@ layout: base.njk
     <h1 class="post-title">{{post.title}}</h1>
 
     <section class="post-info">
-        <p>{{post.primary_author.name}}</p>
-        <p>{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
+        <p class="post-info-p">{{post.primary_author.name}}</p>
+        <p class="post-info-p">{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
     </section>
 </header>
 
-{{post.html|fuckbr|hnormalize|safe}}
+{{post.html|fuckbr|safe}}
