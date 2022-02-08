@@ -5,6 +5,15 @@ pagination:
 permalink: "/authors/{{pagination.items[0].slug}}/"
 layout: base.njk
 ---
-<h1>{{pagination.items[0].name}}</h1>
-
 {% set posts = ghost.posts|authorfilter(pagination.items[0].slug) %}
+<p><span>Author</span><span>{{posts.length}} Post</span></p>
+<h1>{{pagination.items[0].name}}</h1>
+<p>{{pagination.items[0].bio}}</p>
+
+{% for post in posts %}
+    <section class="postlist">
+        <h2><a href="/{{post.slug}}">{{post.title}}</a></h2>
+        <p class="info">By {{post.primary_author.name}} in {{post.primary_tag.name}} on {{post.published_at|ghostdate}}</p>
+        <p class="text">{{post.html|excerpt(450)}}</p>
+    </section>
+{% endfor %}
