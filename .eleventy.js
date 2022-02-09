@@ -67,7 +67,7 @@ module.exports = config => {
     config.addGlobalData("authors", async () => {
         let url = `${process.env.GHOST_URL}/ghost/api/v3/content/authors/?key=${process.env.GHOST_API}&limit=all`;
         return cache(url, {
-            duration: "30m",
+            duration: "5h",
             type:"json"
         })
     })
@@ -75,7 +75,7 @@ module.exports = config => {
     config.addGlobalData("settings", async () => {
         let url = `${process.env.GHOST_URL}/ghost/api/v3/content/settings/?key=${process.env.GHOST_API}&limit=all`;
         return cache(url, {
-            duration: "1m",
+            duration: "5h",
             type: "json"
         })
     })
