@@ -40,11 +40,8 @@ module.exports = config => {
     config.addPlugin(pluginRss);
     
     config.addGlobalData("meta", {
-        "title": "Álfheimr",
-        "description": "Fun-loving Academia",
         "url": "https://beta.alfheimr.xyz",
         "rss": "https://beta.alfheimr.xyz/rss.xml",
-        "icon": "/assets/logo-big.png", 
         "author": {
             "name": "Wang Zicheng",
             "email": "bwsdmwzc1999@icloud.com"
@@ -72,6 +69,14 @@ module.exports = config => {
         return cache(url, {
             duration: "1h",
             type:"json"
+        })
+    })
+
+    config.addGlobalData("settings", async () => {
+        let url = `${process.env.GHOST_URL}/ghost/api/v3/content/settings/?key=${process.env.GHOST_API}&limit=all`;
+        return cache(url, {
+            duration: "1h",
+            type: "json"
         })
     })
 }

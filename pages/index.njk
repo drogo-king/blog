@@ -3,8 +3,8 @@ permalink: /
 layout: base.njk
 ---
 
-<h1 class="index-h1">{{meta.title}}</h1>
-<p class="description">{{meta.description}}</p>
+<h1 class="index-h1">{{settings.settings.title}}</h1>
+<p class="description">{{settings.settings.description}}</p>
 
 {% for post in ghost.posts %}
     <section class="postlist">

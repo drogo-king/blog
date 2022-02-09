@@ -3,17 +3,16 @@
 <html lang="en">
 
   <head>
+    <title>{{title or settings.settings.title}}</title>
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1" name="viewport">
-    <title>{{title or meta.title}}</title>
-    <meta content="{{meta.description}}" name="description">
-    <meta content="{{meta.author.name}}" name="author">
+    <meta content="{{settings.settings.description}}" name="description">
     <meta content="{{meta.url}}{{meta.icon}}" property="og:image">
     <link href="{{meta.url}}{{page.url}}" rel="canonical">
     <link rel="stylesheet" href="/assets/style.css">
-    <link href="{{meta.icon}}" rel="icon">
-    <link href="{{meta.icon}}" rel="apple-touch-icon" sizes="180x180">
-    <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="{{meta.title}}">
+    <link href="{{settings.settings.icon}}" rel="icon">
+    <link href="{{settings.settings.icon}}" rel="apple-touch-icon" sizes="180x180">
+    <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="{{settings.settings.title}}">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Libre+Baskerville&family=Raleway&family=Redressed&family=Rowdies&display=swap" rel="stylesheet">
@@ -24,7 +23,7 @@
     <header class="base-header">
       <nav>
         <a href="/">
-          <img src="{{meta.icon}}" width="960" height="960"/>
+          <img src="{{settings.settings.logo}}" width="960" height="960"/>
         </a>
         {% for title, url in meta.nav %}
         <a {% if page.url === url %}class="active" {% endif %} href="{{url}}">{{title}}</a>
