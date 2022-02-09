@@ -12,8 +12,11 @@ layout: base.njk
     <h1 class="post-title">{{post.title}}</h1>
 
     <section class="post-info">
-        <p class="post-info-p">{{post.primary_author.name}}</p>
-        <p class="post-info-p">{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
+        <a href="{{meta.url}}/authors/{{post.primary_author.slug}}"><img src= "{{post.primary_author.profile_image}}"/></a>
+        <div>
+            <a href="{{meta.url}}/authors/{{post.primary_author.slug}}"><p class="post-info-p">{{post.primary_author.name}}</p></a>
+            <p class="post-info-p">{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
+        </div>
     </section>
 </header>
 

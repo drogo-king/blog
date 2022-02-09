@@ -268,13 +268,28 @@ footer {
 .post-info {
     font-size: 1.15em;
     font-family: var(--font-functional);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: fit-content;
+}
+
+.post-info div {
+    margin-left: var(--spacing-half);
+}
+
+.post-info img {
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+}
+
+.post-info-p {
+    margin-top: 0px;
 }
 
 /* ANCHOR markdown below */
-
-.post-info-p {
-    margin-top: 8px;
-}
 
 p + p {
     margin-top: var(--spacing);
@@ -341,6 +356,7 @@ em {
     font-size: 1.2em;
     color: var(--color-accent);
     position: relative;
+    font-family: var(--font-secondary);
 }
 
 .toparticle::after {
@@ -358,6 +374,7 @@ em {
     color: var(--color-secondary);
     margin-left: 1.5em;
     text-transform: capitalize;
+    font-family: var(--font-secondary);
 }
 
 .tag-header {
@@ -379,6 +396,7 @@ em {
     margin-top: 10px;
     margin-bottom: 10px;
     text-transform: capitalize;
+    font-family: var(--font-secondary);
 }
 
 /* ANCHOR authors list below */
