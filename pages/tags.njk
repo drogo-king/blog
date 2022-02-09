@@ -9,17 +9,15 @@ allTags:
 permalink: "/tag/{{pagination.items[0]}}/"
 layout: base.njk
 ---
-{% set posts = ghost.posts | tagfilter(pagination.items[0]) %}
-<header class="tag-header">
-  <p><span class="toparticle">Topic</span><span class="toptag">{{posts.length}} Posts</span>
-  <h1 class="tag-title">{{pagination.items[0]}}</h1>
-  <p class="tag-description">{{allTags[pagination.items[0]]}}</p>
-</header>
+<main>
+  {% set posts = ghost.posts | tagfilter(pagination.items[0]) %}
+  <header class="tag-header">
+    <p><span class="toparticle">Topic</span><span class="toptag">{{posts.length}} Posts</span>
+    <h1 class="tag-title">{{pagination.items[0]}}</h1>
+    <p class="tag-description">{{allTags[pagination.items[0]]}}</p>
+  </header>
 
-{% for post in posts %}
-  <section class="postlist">
-    <h2><a href="/{{post.slug}}">{{post.title}}</a></h2>
-    <p class="info">By {{post.primary_author.name}} in {{post.primary_tag.name}} on {{post.published_at|ghostdate}}</p>
-    <p class="text">{{post.html|excerpt(450)}}</p>
-  </section>
-{% endfor %}
+  {% for post in posts %}
+    {% include "post.njk" %}
+  {% endfor %}
+</main>

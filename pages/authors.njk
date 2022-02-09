@@ -3,19 +3,21 @@ permalink: /authors/
 layout: base.njk
 title: Authors
 ---
-<h1 class="authors-title">Authors</h1>
+<main>
+    <h1 class="authors-title">Authors</h1>
 
-<section class="authors-list">
-    {% set data = authors.authors %}
-    {% for author in data %}
-    <a href="/authors/{{author.slug}}/">
-        <section class="authors-item">
-            <div>
-                <p class="authors-item-name">{{author.name}} <span class="author-item-location">• {{author.location}}</span></p>
-                <p class="authors-item-bio">{{author.bio}}</p>
-            </div>
-            <img src="{{author.cover_image}}"/>
-        </section>
-    </a>
-    {%endfor%}
-</section>
+    <section class="authors-list">
+        {% set data = authors.authors %}
+        {% for author in data %}
+        <a href="/authors/{{author.slug}}/">
+            <section class="authors-item">
+                <div>
+                    <p class="authors-item-name">{{author.name}} <span class="author-item-location">• {{author.location}}</span></p>
+                    <p class="authors-item-bio">{{author.bio}}</p>
+                </div>
+                <img src="{{author.cover_image}}"/>
+            </section>
+        </a>
+        {%endfor%}
+    </section>
+</main>

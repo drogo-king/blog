@@ -2,14 +2,11 @@
 permalink: /
 layout: base.njk
 ---
+<main>
+    <h1 class="index-h1">{{settings.settings.title}}</h1>
+    <p class="description">{{settings.settings.description}}</p>
 
-<h1 class="index-h1">{{settings.settings.title}}</h1>
-<p class="description">{{settings.settings.description}}</p>
-
-{% for post in ghost.posts %}
-    <section class="postlist">
-        <h2><a href="/{{post.slug}}">{{post.title}}</a></h2>   
-        <p class="info">By {{post.primary_author.name}} in “{{post.primary_tag.name}}” on {{post.published_at|ghostdate}}</p>
-        <p class="text">{{post.html|excerpt(450)}}</p>
-    </section>
-{% endfor %}
+    {% for post in ghost.posts %}
+        {% include "post.njk" %}
+    {% endfor %}
+</main>

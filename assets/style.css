@@ -47,6 +47,7 @@ scroll-margin-top: 2em;
     --color-secondary: #73777D;
     --color-accent: #d29d00;
     --color-bg: hsla(60, 100%, 99%, 1);
+    --color-bg-secondary: #F7F8FA;
     --color-divider: #E1E3E6;
     --line-height: 1.6rem;
     --spacing-half: calc(var(--line-height) / 2);
@@ -62,15 +63,8 @@ scroll-margin-top: 2em;
         --color-secondary: #909499;
         --color-accent: #d29d00;
         --color-bg: #222426;
+        --color-bg-secondary: #1D1F20;
         --color-divider: #3B3D40;
-    }
-
-    .footer {
-        color: var(--color-secondary);
-    }
-
-    .rss {
-        fill: var(--color-secondary);
     }
 }
 
@@ -122,12 +116,12 @@ nav a.active {
 
 nav a.active::before {
     content: "";
-    width: 120%;
+    width: 110%;
     height: 3px;
     background: var(--color-accent);
     position: absolute;
-    top: calc(0px - var(--spacing) - 0.8em);
-    left: -10%;
+    top: calc(0px - var(--spacing) - 0.4em);
+    left: -5%;
 }
 
 nav img {
@@ -285,7 +279,7 @@ footer {
     border: 2px solid var(--color-accent);
 }
 
-.post-info-p {
+.post-info p {
     margin-top: 0px;
 }
 
@@ -417,6 +411,7 @@ em {
     display: grid;
     grid-template-columns: 7fr 3fr;
     margin-bottom: var(--spacing-2);
+    background-color: var(--color-bg-secondary);
 }
 
 .authors-item div {
@@ -425,6 +420,7 @@ em {
 
 .authors-item img {
     height: calc(8em - 2px);
+    object-fit: cover;
 }
 
 .authors-item-name {
@@ -489,6 +485,18 @@ em {
     background: var(--color-divider);
 }
 
-.author-postlist {
+.authorpage section {
     border: none;
+}
+
+/* ANCHOR dark mode below */
+
+@media (prefers-color-scheme: dark) {
+    .footer {
+        color: var(--color-secondary);
+    }
+
+    .rss {
+        fill: var(--color-secondary);
+    }
 }

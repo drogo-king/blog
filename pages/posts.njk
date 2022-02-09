@@ -5,19 +5,21 @@ pagination:
 permalink: "/{{pagination.items[0].slug}}/"
 layout: base.njk
 ---
-{% set post = pagination.items[0] %}
-<header class="post-header">
-    <p><span class="toparticle">Article</span><span class="toptag">{{post.primary_tag.name}}</span></p>
+<main>
+    {% set post = pagination.items[0] %}
+    <header class="post-header">
+        <p><span class="toparticle">Article</span><span class="toptag">{{ post.primary_tag.name if post.primary_tag else "uncategorized" }}</span></p>
 
-    <h1 class="post-title">{{post.title}}</h1>
+        <h1 class="post-title">{{post.title}}</h1>
 
-    <section class="post-info">
-        <a href="{{meta.url}}/authors/{{post.primary_author.slug}}"><img src= "{{post.primary_author.profile_image}}"/></a>
-        <div>
-            <a href="{{meta.url}}/authors/{{post.primary_author.slug}}"><p class="post-info-p">{{post.primary_author.name}}</p></a>
-            <p class="post-info-p">{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
-        </div>
-    </section>
-</header>
+        <section class="post-info">
+            <a href="{{meta.url}}/authors/{{post.primary_author.slug}}"><img src= "{{post.primary_author.profile_image}}"/></a>
+            <div>
+                <a href="{{meta.url}}/authors/{{post.primary_author.slug}}"><p>{{post.primary_author.name}}</p></a>
+                <p>{{post.published_at|ghostdate}} • {{post.reading_time}} mins</p>
+            </div>
+        </section>
+    </header>
 
-{{post.html|fuckbr|safe}}
+    {{post.html|fuckbr|safe}}
+</main>

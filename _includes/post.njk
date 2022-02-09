@@ -1,0 +1,5 @@
+<section class="postlist">
+    <h2><a href="/{{post.slug}}">{{post.title}}</a></h2>   
+    <p class="info">By {{post.primary_author.name}} in “{{ post.primary_tag.name if post.primary_tag else "uncategorized" }}” on {{post.published_at|ghostdate}}</p>
+    <p class="text">{{post.html|excerpt(450)}}</p>
+</section>

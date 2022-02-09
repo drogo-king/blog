@@ -9,9 +9,8 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-cache-assets": "^2.3.0",
-    "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "dotenv": "^14.3.2",
-    "linkedom": "^0.13.0",
+    "dotenv": "^16.0.0",
+    "linkedom": "^0.13.2",
     "luxon": "^2.3.0"
   }
 }

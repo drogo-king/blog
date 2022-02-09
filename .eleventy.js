@@ -1,6 +1,5 @@
 const util = require('util')
 const {DateTime} = require('luxon')
-const pluginRss = require("@11ty/eleventy-plugin-rss");
 const {parseHTML} = require('linkedom')
 const cache = require("@11ty/eleventy-cache-assets");
 require('dotenv').config()
@@ -28,7 +27,7 @@ module.exports = config => {
     })
 
     config.addFilter('tagfilter', (posts, tag) => {
-        return posts.filter(post => post.primary_tag.slug == tag)
+        return posts.filter(post => post.primary_tag && post.primary_tag.slug == tag)
     })
     
     config.addFilter('authorfilter', (posts, author) => {
@@ -36,8 +35,6 @@ module.exports = config => {
     })
 
     config.addPassthroughCopy("assets")
-    
-    config.addPlugin(pluginRss);
     
     config.addGlobalData("meta", {
         "url": "https://beta.alfheimr.xyz",
@@ -67,7 +64,7 @@ module.exports = config => {
     config.addGlobalData("authors", async () => {
         let url = `${process.env.GHOST_URL}/ghost/api/v3/content/authors/?key=${process.env.GHOST_API}&limit=all`;
         return cache(url, {
-            duration: "5h",
+            duration: "1m",
             type:"json"
         })
     })
@@ -75,7 +72,7 @@ module.exports = config => {
     config.addGlobalData("settings", async () => {
         let url = `${process.env.GHOST_URL}/ghost/api/v3/content/settings/?key=${process.env.GHOST_API}&limit=all`;
         return cache(url, {
-            duration: "5h",
+            duration: "1m",
             type: "json"
         })
     })

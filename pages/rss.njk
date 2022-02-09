@@ -8,20 +8,19 @@ eleventyExcludeFromCollections: true
   <subtitle>{{ settings.settings.description }}</subtitle>
   <link href="{{ meta.rss }}" rel="self"/>
   <link href="{{ meta.url }}"/>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ ghost.posts[0].updated_at }}</updated>
   <id>{{ meta.url }}</id>
   <author>
     <name>{{ meta.author.name }}</name>
     <email>{{ meta.author.email }}</email>
   </author>
-  {%- for post in collections.posts %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- for post in ghost.posts %}
   <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <title>{{ post.title }}</title>
+    <link href="{{meta.url}}/{{post.slug}}/"/>
+    <updated>{{post.date}}</updated>
+    <id>{{meta.url}}/{{post.slug}}/</id>
+    <content type="html">{{post.html|fuckbr}}</content>
   </entry>
   {%- endfor %}
 </feed>
