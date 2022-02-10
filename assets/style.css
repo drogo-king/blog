@@ -173,11 +173,6 @@ footer {
         font-size: 15px;
     }
 
-    body {
-        padding-left: var(--spacing);
-        padding-right: var(--spacing);
-    }
-
     nav a {
         font-size: 0.8em;
     }
