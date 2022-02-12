@@ -116,7 +116,7 @@ nav {
 	display: flex;
 	align-items: center;
 	font-family: var(--font-secondary);
-	margin-left: var(--spacing);
+	margin-left: 2.2rem;
 }
 
 nav a {
@@ -150,11 +150,11 @@ nav a.active::before {
 	display: flex;
 	height: 4.8em;
 	align-items: center;
-	margin-left: 2.5em;
+	margin-left: 2.2rem;
 }
 
 .base-header img {
-	width: 2.2em;
+	width: 2.3em;
 }
 
 body {
