@@ -535,13 +535,29 @@ em {
 	background: var(--color-divider);
 }
 
+.social-media {
+	margin-top: var(--spacing);
+}
+
+.social-media svg {
+	height: 1.5rem;
+	width: 1.5rem;
+	fill: var(--color-secondary);
+	display: inline;
+	margin-right: var(--spacing-half);
+}
+
 .authorpage section {
 	border: none;
 }
 
+.property-none {
+	visibility: hidden;
+}
+
 @media (max-width: 680px) {
 	.author-title {
-		font-size: 2.2em;
+		font-size: 2em;
 	}
 }
 
