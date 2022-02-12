@@ -551,10 +551,6 @@ em {
 	border: none;
 }
 
-.property-none {
-	display: none;
-}
-
 @media (max-width: 680px) {
 	.author-title {
 		font-size: 2em;
