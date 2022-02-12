@@ -116,7 +116,7 @@ nav {
 	display: flex;
 	align-items: center;
 	font-family: var(--font-secondary);
-	margin-left: var(--spacing-half);
+	margin-left: var(--spacing);
 }
 
 nav a {
