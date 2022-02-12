@@ -2,18 +2,18 @@
 	"name": "eleventy",
 	"version": "1.0.0",
 	"scripts": {
-		"start": "eleventy --serve",
+		"start": "DEV=true eleventy --serve",
 		"clean": "rm -rf .cache _site"
 	},
 	"author": "Wang Zicheng",
 	"dependencies": {
 		"@11ty/eleventy": "^1.0.0",
 		"@11ty/eleventy-cache-assets": "^2.3.0",
-		"dotenv": "^16.0.0",
 		"linkedom": "^0.13.2",
 		"luxon": "^2.3.0"
 	},
 	"devDependencies": {
+		"dotenv": "^16.0.0",
 		"prettier": "^2.5.1",
 		"pretty-quick": "^3.1.3",
 		"simple-git-hooks": "^2.7.0"

@@ -2,7 +2,7 @@ const util = require("util");
 const { DateTime } = require("luxon");
 const { parseHTML } = require("linkedom");
 const cache = require("@11ty/eleventy-cache-assets");
-require("dotenv").config();
+if (process.env.DEV) require("dotenv").config();
 
 module.exports = config => {
 	config.addFilter("console", data => util.inspect(data));
