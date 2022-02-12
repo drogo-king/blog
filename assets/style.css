@@ -242,6 +242,7 @@ footer p {
 .postlist {
 	padding: var(--spacing) 0;
 	border-top: 1px solid var(--color-divider);
+	border-bottom: 1px solid var(--color-divider);
 }
 
 .postlist h2 {
