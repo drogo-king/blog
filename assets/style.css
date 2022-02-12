@@ -165,6 +165,7 @@ body {
 }
 
 main {
+	margin-top: 11vh;
 	max-width: 950px;
 	margin-left: auto;
 	margin-right: auto;
@@ -198,6 +199,7 @@ footer p {
 	.base-header {
 		margin-left: var(--spacing);
 		margin-right: var(--spacing);
+		border-bottom: var(--color-divider) solid 1px;
 	}
 
 	nav {
@@ -215,6 +217,7 @@ footer p {
 	}
 
 	main {
+		margin-top: 8vh;
 		margin-left: var(--spacing);
 		margin-right: var(--spacing);
 	}
@@ -225,7 +228,6 @@ footer p {
 .index-h1 {
 	text-align: center;
 	font-size: 3.2em;
-	margin-top: var(--spacing-4);
 }
 
 .description {
@@ -243,12 +245,12 @@ footer p {
 }
 
 .postlist h2 {
-	font-size: 1.7em;
+	font-size: 1.5em;
 	line-height: 1.2;
 }
 
 .postlist .info {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	margin: var(--spacing-half) 0;
 	font-family: var(--font-functional);
 	color: var(--color-secondary);
@@ -269,7 +271,6 @@ footer p {
 /* ANCHOR post below */
 
 .post-header {
-	margin-top: 12vh;
 	position: relative;
 	padding-bottom: var(--spacing);
 	margin-bottom: var(--spacing);
@@ -422,7 +423,6 @@ em {
 }
 
 .tag-header {
-	margin-top: 12vh;
 	position: relative;
 	padding-bottom: var(--spacing);
 	margin-bottom: var(--spacing);
@@ -448,7 +448,6 @@ em {
 .authors-title {
 	font-size: 3em;
 	line-height: 1.2;
-	margin-top: 12vh;
 }
 
 .authors-list {
@@ -515,7 +514,6 @@ em {
 }
 
 .author-header {
-	margin-top: 12vh;
 	position: relative;
 	padding-bottom: var(--spacing);
 }
@@ -540,11 +538,15 @@ em {
 }
 
 .social-media svg {
-	height: 1.5rem;
-	width: 1.5rem;
+	height: 1.4rem;
+	width: 1.4rem;
 	fill: var(--color-secondary);
 	display: inline;
 	margin-right: var(--spacing-half);
+}
+
+.social-media svg:hover {
+	fill: var(--color-accent);
 }
 
 .authorpage section {
