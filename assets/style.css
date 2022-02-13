@@ -547,7 +547,7 @@ em {
 	fill: var(--color-secondary);
 	display: inline;
 	margin-right: var(--spacing-half);
-	transition: fill 0.15s ease-out;
+	transition: fill 0.3s ease-out;
 }
 
 .social-media svg:hover {
