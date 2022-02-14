@@ -544,14 +544,14 @@ em {
 .social-media svg {
 	height: 1.4rem;
 	width: 1.4rem;
-	fill: var(--color-secondary);
+	color: var(--color-secondary);
 	display: inline;
 	margin-right: var(--spacing-half);
-	transition: fill 0.3s ease-out;
+	transition: color 0.3s ease-out;
 }
 
 .social-media svg:hover {
-	fill: var(--color-accent);
+	color: var(--color-accent);
 }
 
 .authorpage section {
