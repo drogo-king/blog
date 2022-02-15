@@ -2,6 +2,8 @@ const util = require("util");
 const { DateTime } = require("luxon");
 const { parseHTML } = require("linkedom");
 const cache = require("@11ty/eleventy-cache-assets");
+const rollup = require("rollup");
+const { terser } = require("rollup-plugin-terser");
 if (process.env.DEV) require("dotenv").config();
 
 module.exports = config => {
@@ -80,5 +82,23 @@ module.exports = config => {
 			duration: "1m",
 			type: "json"
 		});
+	});
+
+	config.addTemplateFormats("js");
+	config.addExtension("js", {
+		outputFileExtension: "js",
+		read: false,
+		compile: async (_, inputPath) => {
+			if (inputPath === "./.eleventy.js") return;
+			const bundle = await rollup.rollup({
+				input: [inputPath],
+				plugins: process.env.DEV ? [] : [terser()]
+			});
+			const { output } = await bundle.generate({
+				format: "iife",
+				generatedCode: "es2015"
+			});
+			return async () => output[0].code;
+		}
 	});
 };
