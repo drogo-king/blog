@@ -4,7 +4,7 @@ const { parseHTML } = require("linkedom");
 const cache = require("@11ty/eleventy-cache-assets");
 const rollup = require("rollup");
 const { terser } = require("rollup-plugin-terser");
-if (process.env.DEV) require("dotenv").config();
+require("dotenv").config();
 
 module.exports = config => {
 	config.addFilter("console", data => util.inspect(data));

@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"start": "DEV=true eleventy --serve",
+		"build": "eleventy",
 		"clean": "rm -rf .cache _site"
 	},
 	"author": "Wang Zicheng",

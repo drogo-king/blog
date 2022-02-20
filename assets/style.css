@@ -212,8 +212,8 @@ footer p {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	height: 20rem;
-	width: 20rem;
+	height: 30rem;
+	width: 50rem;
 	background-color: var(--color-divider);
 	transform: translate(-50%, -50%);
 	display: grid;
@@ -257,12 +257,33 @@ footer p {
 }
 
 #searchbar ol {
+	margin-top: var(--spacing-half);
 	grid: result;
+	padding: 0;
 }
 
 #searchbar svg {
 	height: 1.7rem;
 	width: 1.7rem;
+}
+
+#closebutton:hover {
+	color: var(--color-accent);
+	transition: var(--icon-hover);
+}
+
+#searchresults li {
+	margin-top: 4px;
+	padding-top: var(--spacing-half);
+	padding-bottom: var(--spacing-half);
+	list-style-type: none;
+	padding-left: 0;
+	border-bottom: dotted 1px var(--color-secondary);
+}
+
+#searchresults h2 {
+	font-size: 1em;
+	margin: 0;
 }
 
 @media (max-width: 680px) {
