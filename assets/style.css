@@ -214,7 +214,8 @@ footer p {
 	left: 50%;
 	height: 30rem;
 	width: 50rem;
-	background-color: var(--color-divider);
+	background-color: white;
+	border: solid 1px var(--color-accent);
 	transform: translate(-50%, -50%);
 	display: grid;
 	grid-template:
@@ -234,7 +235,7 @@ footer p {
 
 #searchbar input {
 	grid: bar;
-	background-color: var(--color-divider);
+	background-color: white;
 	border: none;
 	border-bottom: 2px solid var(--color-secondary);
 	margin-right: 10px;
@@ -277,8 +278,12 @@ footer p {
 	padding-top: var(--spacing-half);
 	padding-bottom: var(--spacing-half);
 	list-style-type: none;
-	padding-left: 0;
+	padding-left: var(--spacing);
 	border-bottom: dotted 1px var(--color-secondary);
+}
+
+#searchresults li:hover {
+	background-color: var(--color-divider);
 }
 
 #searchresults h2 {

@@ -68,6 +68,18 @@ module.exports = config => {
 		});
 	});
 
+	config.addGlobalData("data", async () => {
+		let url =
+			process.env.GHOST_URL +
+			"/ghost/api/v3/content/posts/?key=" +
+			process.env.GHOST_API +
+			"&limit=all&fields=title,html&formats=plaintext";
+		return cache(url, {
+			duration: "1m",
+			type: "json"
+		});
+	});
+
 	config.addGlobalData("authors", async () => {
 		let url = `${process.env.GHOST_URL}/ghost/api/v3/content/authors/?key=${process.env.GHOST_API}&limit=all`;
 		return cache(url, {
