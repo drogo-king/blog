@@ -182,13 +182,19 @@ footer {
 
 footer p {
 	font-family: var(--font-secondary);
+	color: var(--color-secondary);
 }
 
-.rss {
-	width: 0.9em;
-	height: 0.9em;
-	fill: var(--color-primary);
+footer svg {
+	width: 1.25em;
+	height: 1.25em;
+	color: var(--color-secondary);
 	margin-left: var(--spacing-half);
+	transition: color 0.3s ease-out;
+}
+
+footer svg:hover {
+	color: var(--color-accent);
 }
 
 @media (max-width: 680px) {
