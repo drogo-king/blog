@@ -240,7 +240,7 @@ footer svg:hover {
 }
 
 #searchbar input {
-	grid: bar;
+	grid-area: bar;
 	background-color: white;
 	border: none;
 	border-bottom: 2px solid var(--color-secondary);
@@ -253,7 +253,7 @@ footer svg:hover {
 }
 
 #searchbar button {
-	grid: close;
+	grid-area: close;
 	background-color: transparent;
 	border: none;
 	color: var(--color-secondary);
@@ -261,12 +261,6 @@ footer svg:hover {
 
 #searchbar button:active {
 	color: var(--color-primary);
-}
-
-#searchbar ol {
-	margin-top: var(--spacing-half);
-	grid: result;
-	padding: 0;
 }
 
 #searchbar svg {
@@ -279,12 +273,21 @@ footer svg:hover {
 	transition: var(--icon-hover);
 }
 
+#searchresults {
+	grid-area: result;
+	margin-top: var(--spacing-half);
+	padding: 0;
+	max-height: calc(27.5rem - var(--spacing-half));
+	overflow: scroll;
+}
+
 #searchresults li {
 	margin-top: 4px;
 	padding-top: var(--spacing-half);
 	padding-bottom: var(--spacing-half);
 	list-style-type: none;
 	padding-left: var(--spacing);
+	padding-right: var(--spacing);
 	border-bottom: dotted 1px var(--color-secondary);
 }
 
@@ -335,6 +338,12 @@ footer svg:hover {
 		margin-top: 8vh;
 		margin-left: var(--spacing);
 		margin-right: var(--spacing);
+	}
+
+	/* working solution. will use a better way for mobile searching in the future. */
+
+	#search {
+		display: none;
 	}
 }
 
