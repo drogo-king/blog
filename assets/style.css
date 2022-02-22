@@ -297,6 +297,15 @@ footer svg:hover {
 	margin: 0;
 }
 
+@media (prefers-color-scheme: dark) {
+	#searchbar {
+		background-color: var(--color-bg-secondary);
+	}
+	#searchbar input {
+		background-color: var(--color-bg-secondary);
+	}
+}
+
 @media (max-width: 680px) {
 	html {
 		font-size: 15px;
