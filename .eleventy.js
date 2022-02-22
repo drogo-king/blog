@@ -61,19 +61,7 @@ module.exports = config => {
 			process.env.GHOST_URL +
 			"/ghost/api/v3/content/posts/?key=" +
 			process.env.GHOST_API +
-			"&limit=all&include=authors,tags";
-		return cache(url, {
-			duration: "1m",
-			type: "json"
-		});
-	});
-
-	config.addGlobalData("data", async () => {
-		let url =
-			process.env.GHOST_URL +
-			"/ghost/api/v3/content/posts/?key=" +
-			process.env.GHOST_API +
-			"&limit=all&fields=title,html&formats=plaintext";
+			"&limit=all&include=authors,tags&formats=html,plaintext";
 		return cache(url, {
 			duration: "1m",
 			type: "json"
@@ -102,6 +90,7 @@ module.exports = config => {
 		read: false,
 		compile: async (_, inputPath) => {
 			if (inputPath === "./.eleventy.js") return;
+			if (inputPath.endsWith("11ty.js")) return;
 			const bundle = await rollup.rollup({
 				input: [inputPath],
 				plugins: process.env.DEV ? [] : [terser()]
