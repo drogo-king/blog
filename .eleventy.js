@@ -3,7 +3,6 @@ const { DateTime } = require("luxon");
 const { parseHTML } = require("linkedom");
 const cache = require("@11ty/eleventy-cache-assets");
 const rollup = require("rollup");
-const { terser } = require("rollup-plugin-terser");
 const { nodeResolve } = require("@rollup/plugin-node-resolve");
 require("dotenv").config();
 
@@ -94,7 +93,7 @@ module.exports = config => {
 			if (inputPath.endsWith("11ty.js")) return;
 			const bundle = await rollup.rollup({
 				input: [inputPath],
-				plugins: process.env.DEV ? [nodeResolve()] : [terser(), nodeResolve()]
+				plugins: [nodeResolve()]
 			});
 			const { output } = await bundle.generate({
 				format: "iife",

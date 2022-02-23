@@ -1,4 +1,4 @@
-import Index from "flexsearch/dist/module/index";
+import Index from "flexsearch/dist/module/index.js";
 
 let state = false;
 const toggleSearchbar = () => {
