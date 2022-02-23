@@ -2,7 +2,11 @@ const util = require("util");
 const { DateTime } = require("luxon");
 const { parseHTML } = require("linkedom");
 const cache = require("@11ty/eleventy-cache-assets");
-if (process.env.DEV) require("dotenv").config();
+const rollup = require("rollup");
+const { terser } = require("rollup-plugin-terser");
+const { nodeResolve } = require("@rollup/plugin-node-resolve");
+const commonjs = require("@rollup/plugin-commonjs");
+require("dotenv").config();
 
 module.exports = config => {
 	config.addFilter("console", data => util.inspect(data));
@@ -59,7 +63,7 @@ module.exports = config => {
 			process.env.GHOST_URL +
 			"/ghost/api/v3/content/posts/?key=" +
 			process.env.GHOST_API +
-			"&limit=all&include=authors,tags";
+			"&limit=all&include=authors,tags&formats=html,plaintext";
 		return cache(url, {
 			duration: "1m",
 			type: "json"
@@ -80,5 +84,24 @@ module.exports = config => {
 			duration: "1m",
 			type: "json"
 		});
+	});
+
+	config.addTemplateFormats("js");
+	config.addExtension("js", {
+		outputFileExtension: "js",
+		read: false,
+		compile: async (_, inputPath) => {
+			if (inputPath === "./.eleventy.js") return;
+			if (inputPath.endsWith("11ty.js")) return;
+			const bundle = await rollup.rollup({
+				input: [inputPath],
+				plugins: process.env.DEV ? [nodeResolve(), commonjs()] : [terser(), nodeResolve(), commonjs()]
+			});
+			const { output } = await bundle.generate({
+				format: "iife",
+				generatedCode: "es2015"
+			});
+			return async () => output[0].code;
+		}
 	});
 };

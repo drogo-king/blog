@@ -62,6 +62,7 @@ h6 {
 	--color-bg: hsla(60, 100%, 99%, 1);
 	--color-bg-secondary: #f7f8fa;
 	--color-divider: #e1e3e6;
+	--icon-hover: color 0.3s ease-out;
 	--line-height: 1.6rem;
 	--spacing-half: calc(var(--line-height) / 2);
 	--spacing: var(--line-height);
@@ -105,7 +106,7 @@ p {
 a {
 	text-decoration: none;
 	color: var(--color-primary);
-	transition: color 0.2s ease-out;
+	transition: var(--icon-hover);
 }
 
 a:hover {
@@ -146,11 +147,27 @@ nav a.active::before {
 	left: -5%;
 }
 
+#search {
+	position: absolute;
+	right: 2.2rem;
+	border: none;
+	background-color: transparent;
+	height: 1.7rem;
+	width: 1.7rem;
+	color: var(--color-secondary);
+	transition: var(--icon-hover);
+}
+
+#search:hover {
+	color: var(--color-accent);
+}
+
 .base-header {
 	display: flex;
 	height: 4.8em;
 	align-items: center;
 	margin-left: 2.2rem;
+	position: relative;
 }
 
 .base-header img {
@@ -197,6 +214,101 @@ footer svg:hover {
 	color: var(--color-accent);
 }
 
+#searchbar {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	height: 30rem;
+	width: 50rem;
+	background-color: white;
+	border: solid 1px var(--color-accent);
+	transform: translate(-50%, -50%);
+	display: grid;
+	grid-template:
+		"bar close" 2.5rem
+		"result result" 1fr
+		/1fr 2.5rem;
+	padding: var(--spacing-half);
+}
+
+.hidden {
+	display: none !important;
+}
+
+.blur {
+	filter: blur(5px);
+}
+
+#searchbar input {
+	grid-area: bar;
+	background-color: white;
+	border: none;
+	border-bottom: 2px solid var(--color-secondary);
+	margin-right: 10px;
+}
+
+#searchbar input:focus {
+	outline: none;
+	border-bottom-color: var(--color-accent);
+}
+
+#searchbar button {
+	grid-area: close;
+	background-color: transparent;
+	border: none;
+	color: var(--color-secondary);
+}
+
+#searchbar button:active {
+	color: var(--color-primary);
+}
+
+#searchbar svg {
+	height: 1.7rem;
+	width: 1.7rem;
+}
+
+#closebutton:hover {
+	color: var(--color-accent);
+	transition: var(--icon-hover);
+}
+
+#searchresults {
+	grid-area: result;
+	margin-top: var(--spacing-half);
+	padding: 0;
+	max-height: calc(27.5rem - var(--spacing-half));
+	overflow: scroll;
+}
+
+#searchresults li {
+	margin-top: 4px;
+	padding-top: var(--spacing-half);
+	padding-bottom: var(--spacing-half);
+	list-style-type: none;
+	padding-left: var(--spacing);
+	padding-right: var(--spacing);
+	border-bottom: dotted 1px var(--color-secondary);
+}
+
+#searchresults li:hover {
+	background-color: var(--color-divider);
+}
+
+#searchresults h2 {
+	font-size: 1em;
+	margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	#searchbar {
+		background-color: var(--color-bg-secondary);
+	}
+	#searchbar input {
+		background-color: var(--color-bg-secondary);
+	}
+}
+
 @media (max-width: 680px) {
 	html {
 		font-size: 15px;
@@ -226,6 +338,12 @@ footer svg:hover {
 		margin-top: 8vh;
 		margin-left: var(--spacing);
 		margin-right: var(--spacing);
+	}
+
+	/* working solution. will use a better way for mobile searching in the future. */
+
+	#search {
+		display: none;
 	}
 }
 
@@ -553,7 +671,7 @@ em {
 	color: var(--color-secondary);
 	display: inline;
 	margin-right: var(--spacing-half);
-	transition: color 0.3s ease-out;
+	transition: var(--icon-hover);
 }
 
 .social-media svg:hover {
