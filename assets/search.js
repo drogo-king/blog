@@ -1,4 +1,4 @@
-import Index from "flexsearch/dist/module/index";
+import flexsearch from "flexsearch";
 
 let state = false;
 const toggleSearchbar = () => {
@@ -33,7 +33,7 @@ const main = async () => {
 	const input = document.querySelector("input");
 	document.getElementById("search").addEventListener("click", toggleSearchbar);
 	document.getElementById("closebutton").addEventListener("click", toggleSearchbar);
-	const index = new Index({ tokenize: "forward" });
+	const index = new flexsearch.Index({ tokenize: "forward" });
 	const data = await (await fetch("/data.json")).json();
 	data.forEach(({ title, plaintext }, i) => {
 		index.add(i, title + " " + plaintext);
