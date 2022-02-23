@@ -245,6 +245,7 @@ footer svg:hover {
 	border: none;
 	border-bottom: 2px solid var(--color-secondary);
 	margin-right: 10px;
+	margin-left: var(--spacing-half);
 }
 
 #searchbar input:focus {
@@ -286,8 +287,9 @@ footer svg:hover {
 	padding-top: var(--spacing-half);
 	padding-bottom: var(--spacing-half);
 	list-style-type: none;
-	padding-left: var(--spacing);
-	padding-right: var(--spacing);
+	margin-left: var(--spacing-half);
+	padding-left: var(--spacing-half);
+	margin-right: var(--spacing);
 	border-bottom: dotted 1px var(--color-secondary);
 }
 
@@ -298,6 +300,11 @@ footer svg:hover {
 #searchresults h2 {
 	font-size: 1em;
 	margin: 0;
+}
+
+#searchresults p {
+	margin-top: var(--spacing-half);
+	font-style: italic;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -467,33 +474,33 @@ h1 {
 h2 {
 	font-size: 1.8em;
 	margin-bottom: var(--spacing-half);
-	margin-top: var(--spacing-half);
+	margin-top: var(--spacing);
 }
 
 h3 {
 	font-size: 1.6em;
 	margin-bottom: var(--spacing-half);
-	margin-top: var(--spacing-half);
+	margin-top: var(--spacing);
 }
 
 h4 {
 	font-size: 1.4em;
 	margin-bottom: var(--spacing-half);
-	margin-top: var(--spacing-half);
+	margin-top: var(--spacing);
 }
 
 h5 {
 	font-size: 1.2em;
 	font-weight: 500;
 	margin-bottom: var(--spacing-half);
-	margin-top: var(--spacing-half);
+	margin-top: var(--spacing);
 }
 
 h6 {
 	font-size: 1.1em;
 	font-weight: 500;
 	margin-bottom: var(--spacing-half);
-	margin-top: var(--spacing-half);
+	margin-top: var(--spacing);
 }
 
 blockquote {

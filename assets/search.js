@@ -15,7 +15,7 @@ const createElement = (title, excerpt, slug) => {
 	const p = document.createElement("p");
 
 	h2.textContent = title;
-	p.textContent = excerpt;
+	p.textContent = excerpt + " …";
 
 	a.setAttribute("href", "https://alfheimr.xyz/" + slug);
 	li.appendChild(h2);
