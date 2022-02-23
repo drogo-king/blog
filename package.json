@@ -2,7 +2,7 @@
 	"name": "eleventy",
 	"version": "1.0.0",
 	"scripts": {
-		"start": "DEV=true eleventy --serve",
+		"start": "eleventy --serve",
 		"build": "eleventy",
 		"clean": "rm -rf .cache _site"
 	},
@@ -14,8 +14,7 @@
 		"flexsearch": "^0.7.21",
 		"linkedom": "^0.14.2",
 		"luxon": "^2.3.0",
-		"rollup": "^2.68.0",
-		"rollup-plugin-terser": "^7.0.2"
+		"rollup": "^2.68.0"
 	},
 	"devDependencies": {
 		"dotenv": "^16.0.0",
