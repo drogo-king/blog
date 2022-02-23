@@ -8,7 +8,8 @@ const toggleSearchbar = () => {
 	if (state) document.querySelector("input").focus();
 };
 
-const createElement = (title, excerpt) => {
+const createElement = (title, excerpt, slug) => {
+	const a = document.createElement("a");
 	const li = document.createElement("li");
 	const h2 = document.createElement("h2");
 	const p = document.createElement("p");
@@ -16,10 +17,12 @@ const createElement = (title, excerpt) => {
 	h2.textContent = title;
 	p.textContent = excerpt;
 
+	a.setAttribute("href", "https://alfheimr.xyz/" + slug);
 	li.appendChild(h2);
 	li.appendChild(p);
+	a.appendChild(li);
 
-	document.getElementById("searchresults").appendChild(li);
+	document.getElementById("searchresults").appendChild(a);
 };
 
 const removeAllElements = () => {
@@ -42,7 +45,7 @@ const main = async () => {
 		removeAllElements();
 		const results = index.search(e.target.value);
 		results.forEach(i => {
-			createElement(data[i].title, data[i].plaintext.slice(0, 200));
+			createElement(data[i].title, data[i].plaintext.slice(0, 200), data[i].slug);
 		});
 	});
 };

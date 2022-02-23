@@ -6,8 +6,8 @@ const data = {
 	},
 
 	render: data => {
-		let a = data.ghost.posts.map(({ title, plaintext }) => {
-			return { title, plaintext };
+		let a = data.ghost.posts.map(({ title, plaintext, slug }) => {
+			return { title, plaintext, slug };
 		});
 		return JSON.stringify(a);
 	}
