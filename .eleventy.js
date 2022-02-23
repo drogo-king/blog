@@ -5,6 +5,7 @@ const cache = require("@11ty/eleventy-cache-assets");
 const rollup = require("rollup");
 const { terser } = require("rollup-plugin-terser");
 const { nodeResolve } = require("@rollup/plugin-node-resolve");
+const commonjs = require("@rollup/plugin-commonjs");
 require("dotenv").config();
 
 module.exports = config => {
@@ -94,7 +95,7 @@ module.exports = config => {
 			if (inputPath.endsWith("11ty.js")) return;
 			const bundle = await rollup.rollup({
 				input: [inputPath],
-				plugins: process.env.DEV ? [nodeResolve()] : [terser(), nodeResolve()]
+				plugins: process.env.DEV ? [nodeResolve(), commonjs()] : [terser(), nodeResolve(), commonjs()]
 			});
 			const { output } = await bundle.generate({
 				format: "iife",
