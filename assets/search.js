@@ -26,9 +26,9 @@ const createElement = (title, excerpt, slug) => {
 };
 
 const removeAllElements = () => {
-	const lis = document.querySelectorAll("#searchresults li");
-	lis.forEach(li => {
-		li.remove();
+	const lis = document.querySelectorAll("#searchresults a");
+	lis.forEach(a => {
+		a.remove();
 	});
 };
 
