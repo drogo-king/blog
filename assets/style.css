@@ -291,6 +291,7 @@ footer svg:hover {
 	padding-left: var(--spacing-half);
 	margin-right: var(--spacing);
 	border-bottom: dotted 1px var(--color-secondary);
+	transition: background-color 0.3s ease-out;
 }
 
 #searchresults li:hover {
