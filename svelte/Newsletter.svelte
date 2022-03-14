@@ -1,7 +1,27 @@
 <script>
+    import {fly, fade} from "svelte/transition";
     let hidden = true;
     let name;
     let email;
+    let current = null;
+    const message = {
+        success: "Success! Check your email for the invitation!",
+        failure: "Registration fail! Try again or contact the author."
+    };
+
+    const success = () => {
+        current = "success";
+        setTimeout(() => {
+		    current = null;
+        }, 3000);
+    }
+
+    const failure = () => {
+        current = "failure";
+        setTimeout(() => {
+		    current = null;
+        }, 3000);
+    }
 
     const submit = () => {
         fetch("https://ghost.alfheimr.xyz/members/api/send-magic-link/", {
@@ -11,12 +31,11 @@
                 "Accept": "*/*",
                 "Content-Type": "application/json"
             }
-        }).then(() => {
-
-        }).catch(() => {
-
+        }).then(resp => {
+            hidden = true
+            if (resp.status == 201) success() 
+            else failure()
         })
-        
     }
 
     const toggleNewsletter = () => {
@@ -27,20 +46,30 @@
 <button class="subscribe" on:click={toggleNewsletter}>
     <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 352c-16.53 0-33.06-5.422-47.16-16.41L0 173.2V400C0 426.5 21.49 448 48 448h416c26.51 0 48-21.49 48-48V173.2l-208.8 162.5C289.1 346.6 272.5 352 256 352zM16.29 145.3l212.2 165.1c16.19 12.6 38.87 12.6 55.06 0l212.2-165.1C505.1 137.3 512 125 512 112C512 85.49 490.5 64 464 64h-416C21.49 64 0 85.49 0 112C0 125 6.01 137.3 16.29 145.3z"/></svg>
 </button>
-  
-<div id="portal-page" class="portal" class:hidden>
-    <img alt="site-logo" src="https://ghost.alfheimr.xyz/content/images/2022/01/logo-big.png" width="960" height="960"/>
-    <h2>Álfheimr</h2>
-    <div>
-        <label for="input-name">Name</label>
-        <input id="input-name" bind:value={name} placeholder="Your majesty's name"/>
+
+{#if !hidden}
+    <div transition:fly={{y:-150, duration: 300}} id="portal-page" class="portal">
+        <img alt="site-logo" src="https://ghost.alfheimr.xyz/content/images/2022/01/logo-big.png" width="960" height="960"/>
+        <h2>Álfheimr</h2>
+        <div>
+            <label for="input-name">Name</label>
+            <input id="input-name" bind:value={name} placeholder="Your majesty's name"/>
+        </div>
+        <div>
+            <label for="input-email">Email</label>
+            <input id="input-email" type="email" bind:value={email} placeholder="xxxx@xxxxx.com"/>
+        </div>
+        <button on:click={submit} type="submit">Sign up</button> 
     </div>
-    <div>
-        <label for="input-email">Email</label>
-        <input id="input-email" type="email" bind:value={email} placeholder="xxxx@xxxxx.com"/>
+{/if}
+
+{#if current}
+    <div class="{current} toast" in:fly={{ y: -600, duration: 400 }} out:fade>
+        <span role="status">
+            {message[current]}
+        </span>
     </div>
-    <button on:click={submit} type="submit">Sign up</button> 
-</div>
+{/if}
 
 <style>
     button {
@@ -123,8 +152,43 @@
         margin-top: 1rem;
         border-radius: 5px;
     }
-    .hidden {
-        display: none;
+    .toast {
+        display: flex;
+		width: max-content;
+		justify-content: space-between;
+		align-items: center;
+		text-decoration: none;
+		font-family: inherit;
+		font-weight: 400;
+		font-size: 1em;
+		padding: var(--as-toast-padding, 1em);
+		min-width: 300px;
+		max-width: calc(100vw - 2em);
+		border-radius: var(--as-toast-border-radius, 0.5em);
+		color: var(--as-toast-color, black);
+		backdrop-filter: var(--as-toast-backdrop-filter, none);
+		-webkit-backdrop-filter: var(--as-toast-backdrop-filter, none);
+		box-shadow: var(
+			--as-toast-shadow,
+			0 0.3px 1.4px rgba(0, 0, 0, 0.068),
+			0 0.7px 3.5px rgba(0, 0, 0, 0.098),
+			0 1.4px 7.1px rgba(0, 0, 0, 0.122),
+			0 2.9px 14.6px rgba(0, 0, 0, 0.152),
+			0 8px 40px rgba(0, 0, 0, 0.22)
+		);
+        position: fixed;
+		top: 1em;
+		right: 1em;
+        z-index: 3;
+    }
+    .success {
+        color: var(--as-toast-info-color, var(--as-toast-color, black));
+		background: var(--color-accent);
+    }
+    .failure {
+        color: var(--as-toast-warn-color, var(--as-toast-color, black));
+		border-color: var(--as-toast-warn-border-color, #c92626);
+		background: var(--as-toast-warn-background, #efa9a9);
     }
     @media (prefers-color-scheme: dark) {
         .portal {
