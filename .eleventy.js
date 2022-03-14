@@ -2,13 +2,17 @@ const util = require("util");
 const { DateTime } = require("luxon");
 const { parseHTML } = require("linkedom");
 const cache = require("@11ty/eleventy-cache-assets");
-const rollup = require("rollup");
+const embedSvelte = require("eleventy-plugin-embed-svelte");
 const { terser } = require("rollup-plugin-terser");
-const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
 require("dotenv").config();
 
 module.exports = config => {
+	config.addPlugin(embedSvelte, {
+		svelteDir: "./svelte",
+		rollupOutputPlugins: [terser()]
+	});
+
 	config.addFilter("console", data => util.inspect(data));
 
 	config.addFilter("ghostdate", data => DateTime.fromISO(data).toLocaleString(DateTime.DATE_FULL));
@@ -84,24 +88,5 @@ module.exports = config => {
 			duration: "1m",
 			type: "json"
 		});
-	});
-
-	config.addTemplateFormats("js");
-	config.addExtension("js", {
-		outputFileExtension: "js",
-		read: false,
-		compile: async (_, inputPath) => {
-			if (inputPath === "./.eleventy.js") return;
-			if (inputPath.endsWith("11ty.js")) return;
-			const bundle = await rollup.rollup({
-				input: [inputPath],
-				plugins: process.env.DEV ? [nodeResolve(), commonjs()] : [terser(), nodeResolve(), commonjs()]
-			});
-			const { output } = await bundle.generate({
-				format: "iife",
-				generatedCode: "es2015"
-			});
-			return async () => output[0].code;
-		}
 	});
 };

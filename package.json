@@ -10,12 +10,11 @@
 	"dependencies": {
 		"@11ty/eleventy": "^1.0.0",
 		"@11ty/eleventy-cache-assets": "^2.3.0",
-		"@rollup/plugin-commonjs": "^21.0.1",
-		"@rollup/plugin-node-resolve": "^13.1.3",
+		"@rollup/plugin-commonjs": "^21.0.2",
+		"eleventy-plugin-embed-svelte": "^1.1.0",
 		"flexsearch": "^0.7.21",
 		"linkedom": "^0.14.2",
 		"luxon": "^2.3.0",
-		"rollup": "^2.68.0",
 		"rollup-plugin-terser": "^7.0.2"
 	},
 	"devDependencies": {
