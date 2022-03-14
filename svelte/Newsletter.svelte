@@ -81,8 +81,8 @@
         right: 1.75rem;
         border-radius: 50%;
         border: var(--color-accent) solid 2px;
-        height: 3rem;
-        width: 3rem;
+        height: 2.5em;
+        width: 2.5em;
         color: var(--color-accent);
         background-color: transparent;
         display: flex;
@@ -90,8 +90,8 @@
         justify-content: center;
     }
     .subscribe svg {
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 1.3em;
+        width: 1.3em;
     }
     .portal {
         position: fixed;
