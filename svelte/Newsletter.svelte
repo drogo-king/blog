@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
     import {fly, fade} from "svelte/transition";
     let hidden = true;
     let name;
     let email;
-    let current = null;
     const message = {
         success: "Success! Check your email for the invitation!",
         failure: "Registration fail! Try again or contact the author."
     };
+    let current: null|"success"|"failure" = null;
 
     const success = () => {
         current = "success";

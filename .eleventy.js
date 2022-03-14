@@ -4,12 +4,13 @@ const { parseHTML } = require("linkedom");
 const cache = require("@11ty/eleventy-cache-assets");
 const embedSvelte = require("eleventy-plugin-embed-svelte");
 const { terser } = require("rollup-plugin-terser");
-const commonjs = require("@rollup/plugin-commonjs");
+const sveltePreprocess = require("svelte-preprocess");
 require("dotenv").config();
 
 module.exports = config => {
 	config.addPlugin(embedSvelte, {
 		svelteDir: "./svelte",
+		rollupPluginSvelteOptions: { preprocess: sveltePreprocess() },
 		rollupOutputPlugins: [terser()]
 	});
 
