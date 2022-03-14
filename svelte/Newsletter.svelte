@@ -135,4 +135,9 @@
             background-color: var(--color-bg);
         }
     }
+    @media (max-width: 680px) {
+        .subscribe {
+            display: none !important;
+        }
+    }
 </style>
