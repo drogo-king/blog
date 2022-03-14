@@ -160,8 +160,8 @@
 		text-decoration: none;
 		font-family: inherit;
 		font-weight: 400;
-		font-size: 1em;
-		padding: var(--as-toast-padding, 1em);
+		font-size: 0.9em;
+		padding: 0.5em;
 		min-width: 300px;
 		max-width: calc(100vw - 2em);
 		border-radius: var(--as-toast-border-radius, 0.5em);
