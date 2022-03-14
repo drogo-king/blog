@@ -288,6 +288,12 @@ footer svg:hover {
 	font-family: var(--font-primary);
 }
 
+@media (prefers-color-scheme: dark) {
+	.index-h1 {
+		color: var(--color-accent);
+	}
+}
+
 @media (max-width: 680px) {
 	.postlist h2 {
 		font-size: 1.5em;
