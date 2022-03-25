@@ -98,8 +98,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 25rem;
-        width: 20rem;
+        height: 23rem;
+        width: 17rem;
         padding-left: 2rem;
         padding-right: 2rem;
         background-color: white;
