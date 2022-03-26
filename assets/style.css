@@ -168,7 +168,7 @@ body {
 
 main {
 	margin-top: 11vh;
-	max-width: max(70vw, 680px);
+	max-width: max(70vw, 700px);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -213,7 +213,7 @@ footer svg:hover {
 	}
 }
 
-@media (max-width: 680px) {
+@media (max-width: 700px) {
 	html {
 		font-size: 15px;
 	}
@@ -294,7 +294,7 @@ footer svg:hover {
 	}
 }
 
-@media (max-width: 680px) {
+@media (max-width: 700px) {
 	.postlist h2 {
 		font-size: 1.5em;
 	}
@@ -419,7 +419,7 @@ em {
 	line-height: 1.5;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 700px) {
 	ol,
 	ul {
 		list-style: inside;
@@ -586,7 +586,7 @@ em {
 	border: none;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 700px) {
 	.author-title {
 		font-size: 2em;
 	}
