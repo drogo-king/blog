@@ -73,7 +73,7 @@
         position: fixed;
         top: 50%;
         left: 50%;
-        height: 50vh;
+        height: 70vh;
         width: 70vw;
         background-color: white;
         box-shadow: 0 3.8px 2.2px rgb(0 0 0 / 3%), 0 9.2px 5.3px rgb(0 0 0 / 4%), 0 17.3px 10px rgb(0 0 0 / 5%), 0 30.8px 17.9px rgb(0 0 0 / 6%), 0 57.7px 33.4px rgb(0 0 0 / 7%), 0 138px 80px rgb(0 0 0 / 10%);
