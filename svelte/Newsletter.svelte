@@ -199,7 +199,7 @@
             background-color: var(--color-bg);
         }
     }
-    @media (max-width: 680px) {
+    @media (max-width: 700px) {
         .subscribe {
             display: none !important;
         }
