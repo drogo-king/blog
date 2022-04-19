@@ -81,8 +81,8 @@
     }
     .subscribe {
         position: fixed;
-        bottom: 1.75rem;
-        right: 1.75rem;
+        bottom: 1.75em;
+        right: 1.75em;
         border-radius: 50%;
         border: var(--color-accent) solid 2px;
         height: 2.5em;
