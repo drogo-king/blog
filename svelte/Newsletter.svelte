@@ -63,7 +63,7 @@
             <label for="input-email">Email</label>
             <input id="input-email" type="email" bind:value={email} placeholder="xxxx@xxxxx.com"/>
         </div>
-        <button on:click={submit} type="submit">Sign up</button> 
+        <button on:click={submit} type="submit">Subscribe!</button> 
     </div>
 {/if}
 
