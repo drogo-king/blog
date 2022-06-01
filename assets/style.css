@@ -409,6 +409,20 @@ blockquote {
 	line-height: 1.7em;
 }
 
+figure img {
+	margin-top: 2em;
+}
+
+figure figcaption {
+	font-family: var(--font-quote);
+	color: var(--color-secondary-text);
+	font-size: 0.8em;
+	line-height: 1.4;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
 strong {
 	font-family: var(--font-bold);
 }
