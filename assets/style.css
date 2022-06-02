@@ -263,11 +263,11 @@ footer svg:hover {
 
 .postlist {
 	padding: var(--spacing) 0;
-	border-top: 1px solid var(--color-divider);
+	border-bottom: 1px solid var(--color-divider);
 }
 
-.postlist:last-of-type {
-	border-bottom: 1px solid var(--color-divider);
+.postlist:first-of-type {
+	border-top: 1px solid var(--color-divider);
 }
 
 .postlist h2 {
@@ -603,7 +603,7 @@ ul li {
 }
 
 .authorpage section {
-	border: none;
+	border-top: none !important;
 }
 
 @media (max-width: 700px) {
