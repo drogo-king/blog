@@ -371,7 +371,7 @@ h1 {
 h2 {
 	font-size: 1.8em;
 	margin-bottom: var(--spacing-half);
-	margin-top: var(--spacing);
+	margin-top: var(--spacing-half);
 }
 
 h3 {
