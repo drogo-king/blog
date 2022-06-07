@@ -176,7 +176,7 @@ main {
 footer {
 	position: absolute;
 	bottom: var(--spacing-half);
-	left: calc(50% - 80px);
+	left: 33.232em;
 	font-size: 0.9em;
 	display: flex;
 	align-items: center;
@@ -185,13 +185,19 @@ footer {
 footer p {
 	font-family: var(--font-secondary);
 	color: var(--color-secondary);
+	margin-right: var(--spacing-half);
+}
+
+.source-code {
+	font-size: 0.7em;
+	text-decoration: underline;
 }
 
 footer svg {
 	width: 1.25em;
 	height: 1.25em;
 	color: var(--color-secondary);
-	margin-left: var(--spacing-half);
+	margin-right: var(--spacing-half);
 	transition: color 0.3s ease-out;
 }
 
