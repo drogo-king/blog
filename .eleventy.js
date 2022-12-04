@@ -52,7 +52,7 @@ module.exports = config => {
 		rss: "https://alfheimr.xyz/rss.xml",
 		author: {
 			name: "Wang Zicheng",
-			email: "bwsdmwzc1999@icloud.com"
+			email: "drogo@alfheimr.xyz"
 		},
 		nav: [
 			["Home", "/"],
