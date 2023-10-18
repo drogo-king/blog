@@ -53,7 +53,7 @@
 
 {#if !hidden}
     <div transition:fly={{y:-150, duration: 300}} id="portal-page" class="portal">
-        <img alt="site-logo" src="https://ghost.alfheimr.xyz/content/images/size/w256h256/2022/12/logo-small.png" width="960" height="960"/>
+        <img alt="site-logo" src="https://ghost.alfheimr.xyz/content/images/size/w256h256/2023/09/logo-small.png" width="960" height="960"/>
         <h2>Álfheimr</h2>
         <div>
             <label for="input-name">Name</label>
