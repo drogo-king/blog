@@ -24,7 +24,7 @@
     }
 
     const submit = () => {
-        fetch("https://ghost.alfheimr.xyz/members/api/send-magic-link/", {
+        fetch("https://alfheimr.ghost.io/members/api/send-magic-link/", {
             method: "POST",
             body: JSON.stringify({name, email, "requestSrc": "portal"}),
             headers: {
