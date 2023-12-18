@@ -51,7 +51,7 @@ module.exports = config => {
 		url: "https://alfheimr.xyz",
 		rss: "https://alfheimr.xyz/rss.xml",
 		author: {
-			name: "Wang Zicheng",
+			name: "Drogo King",
 			email: "drogo@alfheimr.xyz"
 		},
 		nav: [
