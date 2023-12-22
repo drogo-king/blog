@@ -205,7 +205,21 @@
     }
     @media (max-width: 700px) {
         .subscribe {
-            display: none !important;
+            bottom: 0.5em;
+            right: 0.5em;
+            height: 2.3em;
+            width: 2.3em;
+            /* display: none !important; */
+        }
+        .subscribe svg {
+            height: 1.1em;
+            width: 1.1em;
+    }
+        .portal {
+            height: 25.5em;
+        }
+        .portal img {
+            margin-top: 2em;
         }
     }
 </style>
