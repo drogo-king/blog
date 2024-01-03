@@ -23,7 +23,6 @@
     const match = (e) => {
         results = index.search(e.target.value)
     }
-    
 </script>
 
 <button on:click={toggleSearch} aria-label="search" class="search">
